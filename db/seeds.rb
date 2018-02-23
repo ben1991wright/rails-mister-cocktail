@@ -8,19 +8,19 @@
 
 require 'open-uri'
 
-url = 'https://picsum.photos/400/500/?random'
+url = 'https://source.unsplash.com/collection/829192/1600x900'
 
 list = JSON.parse(open('http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read)
 
 list['drinks'].each { |hash| Ingredient.create(name: hash['strIngredient1'].capitalize) }
-# 10.times do
-#   cocktail = Cocktail.new(name: "#{Faker::Color.color_name.capitalize} #{Faker::Name.first_name}" )
-#   cocktail.remote_photo_url = url
-#   cocktail.save!
-#   rand(2..6).times do
-#     dose = Dose.new(description: "#{rand(1..4)} cl")
-#     dose.cocktail = cocktail
-#     dose.ingredient_id = rand(1..157)
-#     dose.save!
-#   end
-# end
+10.times do
+  cocktail = Cocktail.new(name: "#{Faker::Color.color_name.capitalize} #{Faker::Name.first_name}" )
+  cocktail.remote_photo_url = url
+  cocktail.save!
+  rand(2..6).times do
+    dose = Dose.new(description: "#{rand(1..4)} cl")
+    dose.cocktail = cocktail
+    dose.ingredient_id = rand(1..157)
+    dose.save!
+  end
+end
