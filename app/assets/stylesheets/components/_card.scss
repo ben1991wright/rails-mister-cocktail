@@ -1,0 +1,21 @@
+.card {
+  background-color: $white;
+  color: black;
+  padding: 10px;
+  height: 160px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  &:hover {
+    h3 {
+      border-bottom: 1px solid rgba(0,0,0,0.4);
+    }
+  }
+  h3 {
+    margin: 0;
+  }
+}
+
+.cocktail-list ul {
+  margin-top: 10px;
+  list-style: none;
+}

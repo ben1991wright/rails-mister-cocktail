@@ -6,5 +6,9 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+import { showCardList } from '../components/card.js'
+import { displayForm } from '../components/recipe.js'
 
+showCardList()
+displayForm()
 console.log('Hello World from Webpacker')

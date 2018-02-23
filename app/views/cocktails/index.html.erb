@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="cocktails container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to cocktail_path(cocktail) do%>
+            <div class="card">
+              <h3><%= cocktail.name %></h3>
+              <div class="cocktail-list hidden">
+                <ul>
+                  <% cocktail.doses[0..2].each do |dose| %>
+                    <li><%= dose.description %> <%= dose.ingredient.name %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
+
