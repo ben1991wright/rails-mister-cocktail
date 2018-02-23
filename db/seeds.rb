@@ -17,6 +17,7 @@ list['drinks'].each { |hash| Ingredient.create(name: hash['strIngredient1'].capi
   cocktail = Cocktail.new(name: "#{Faker::Color.color_name.capitalize} #{Faker::Name.first_name}" )
   cocktail.remote_photo_url = url
   cocktail.save!
+  sleep(3)
   rand(2..6).times do
     dose = Dose.new(description: "#{rand(1..4)} cl")
     dose.cocktail = cocktail
